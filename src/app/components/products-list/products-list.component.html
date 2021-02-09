@@ -1,0 +1,31 @@
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Fila</th>
+        <th scope="col">Id</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Precio</th>
+        <th scope="col">Cantidad</th>
+        <th scope="col">Acciones</th>
+
+      </tr>
+    </thead>
+
+    <tbody *ngIf="products$ | async as products">
+
+      <tr *ngFor="let product of products ; let i = index">
+        <th scope="row"> {{ i }}</th>
+        <td>{{ product.id }}</td>
+        <td>{{ product.name }}</td>
+        <td>{{ product.price }}</td>
+        <td>{{ product.amount }}</td>
+        <td>
+            <a class="btn btn-success mx-1" [routerLink]="['product', product.id]">Edit</a>
+            <button class="btn btn-danger mx-1">Del</button>
+        </td>
+
+      </tr>
+      
+    </tbody>
+
+  </table>

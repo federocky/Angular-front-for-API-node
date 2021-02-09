@@ -1,0 +1,32 @@
+<form class="container container-sm mt-5" novalidate [formGroup]="myForm" (ngSubmit)="onSubmit()">
+
+
+    <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input type="text" class="form-control" name="name"
+        [ngClass]="{  'is-invalid': name.invalid    && ( name.dirty || name.touched),
+                      'is-valid': name.valid        && ( name.dirty || name.touched)}"
+        formControlName="name"
+        >
+    </div>
+
+    <div class="mb-3">
+        <label for="price" class="form-label">Price</label>
+        <input type="number" class="form-control" name="price"
+        [ngClass]="{  'is-invalid': price.invalid    && ( price.dirty || price.touched),
+                      'is-valid': price.valid        && ( price.dirty || price.touched)}"
+        formControlName="price">
+    </div>
+
+    <div class="mb-3">
+        <label for="amount" class="form-label">Amount</label>
+        <input type="number" class="form-control" id="amount"
+        [ngClass]="{  'is-invalid': amount.invalid    && ( amount.dirty || amount.touched),
+                      'is-valid': amount.valid        && ( amount.dirty || amount.touched)}"
+        formControlName="amount">
+    </div>
+
+
+    <button type="submit" class="btn btn-primary">Aceptar</button>
+    <a [routerLink]="['list']" class="btn btn-danger mx-2">Cancelar</a>
+  </form>
