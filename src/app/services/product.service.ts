@@ -39,4 +39,9 @@ export class ProductService {
     return this.http.put<any>(`${this.url}/${id}`, product);
   }
 
+  ///eliminamos un producto
+  deleteProduct( id: number ){
+    return this.http.delete<any>(`${this.url}/${id}`);
+  } 
+
 }

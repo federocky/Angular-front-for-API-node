@@ -11,7 +11,7 @@
       </tr>
     </thead>
 
-    <tbody *ngIf="products$ | async as products">
+    <tbody *ngIf="products">
 
       <tr *ngFor="let product of products ; let i = index">
         <th scope="row"> {{ i }}</th>
@@ -21,7 +21,7 @@
         <td>{{ product.amount }}</td>
         <td>
             <a class="btn btn-success mx-1" [routerLink]="['product', product.id]">Edit</a>
-            <button class="btn btn-danger mx-1">Del</button>
+            <button class="btn btn-danger mx-1" (click)="confirmBox(product.id)">Del</button>
         </td>
 
       </tr>
